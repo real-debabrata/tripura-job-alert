@@ -1,0 +1,99 @@
+{
+  "note": "FAKE sample jobs for test mode. Dates are relative (in_days / days_ago) so they never go stale; the app converts them to real dates in Step 3. Missing field = Not found.",
+  "jobs": [
+    {
+      "id": "sample0001", "sample": true, "kind": "recruitment",
+      "title": "SAMPLE: Lower Division Clerk (12th pass, any stream)",
+      "organization": "Sample Central Department", "sector": "Central",
+      "post": "Lower Division Clerk", "advt_no": "1/2026", "vacancies": 120,
+      "qualification": "12th pass from a recognised board",
+      "levels": ["12th"], "min_qualification": "12th", "stream_req": "not_specified",
+      "age_limit": "18–27 years", "age_min": 18, "age_max": 27,
+      "age_relaxation": "SC/ST 5 years, OBC 3 years",
+      "pay": "Pay Level 2",
+      "location": "Tripura exam centre",
+      "last_date_in_days": 12,
+      "notification_url": "https://example.com/sample-notice-1.pdf",
+      "apply_url": "https://example.com/apply",
+      "source": "Sample", "trust": "OFFICIAL",
+      "first_seen_days_ago": 0, "initial": false, "updates": [], "archived": false
+    },
+    {
+      "id": "sample0002", "sample": true, "kind": "recruitment",
+      "title": "SAMPLE: Data Entry Operator (12th, Science stream with Mathematics)",
+      "organization": "Sample Audit Office", "sector": "Central",
+      "post": "Data Entry Operator", "advt_no": "2/2026", "vacancies": 40,
+      "qualification": "12th, Science stream with Mathematics",
+      "levels": ["12th"], "min_qualification": "12th", "stream_req": "science",
+      "age_limit": "18–27 years", "age_min": 18, "age_max": 27,
+      "pay": "Pay Level 4", "location": "Agartala",
+      "last_date_in_days": 20,
+      "notification_url": "https://example.com/sample-notice-2.pdf",
+      "apply_url": "https://example.com/apply",
+      "source": "Sample", "trust": "OFFICIAL",
+      "first_seen_days_ago": 1, "initial": false, "updates": [], "archived": false
+    },
+    {
+      "id": "sample0003", "sample": true, "kind": "recruitment",
+      "title": "SAMPLE: Police Constable (10th pass) - closing tomorrow",
+      "organization": "Sample State Police", "sector": "Police",
+      "post": "Constable", "advt_no": "3/2026", "vacancies": 300,
+      "qualification": "10th pass; physical standards apply",
+      "levels": ["10th"], "min_qualification": "10th", "stream_req": "n/a",
+      "age_limit": "18–25 years", "age_min": 18, "age_max": 25,
+      "pay": "Pay Level 3", "location": "Tripura",
+      "last_date_in_days": 1,
+      "notification_url": "https://example.com/sample-notice-3.pdf",
+      "apply_url": "https://example.com/apply",
+      "source": "Sample", "trust": "OFFICIAL",
+      "first_seen_days_ago": 10, "initial": false, "updates": [], "archived": false
+    },
+    {
+      "id": "sample0004", "sample": true, "kind": "recruitment",
+      "title": "SAMPLE: Graduate Teacher (Graduate + B.Ed + TET)",
+      "organization": "Sample Teachers Board", "sector": "Teaching",
+      "post": "Graduate Teacher", "advt_no": "4/2026", "vacancies": 500,
+      "qualification": "Bachelor's degree with B.Ed and TET",
+      "levels": ["graduate"], "min_qualification": "graduate", "stream_req": "n/a",
+      "age_limit": "Up to 40 years", "age_max": 40,
+      "pay": "Pay Level 6", "location": "Tripura",
+      "last_date_in_days": 30,
+      "notification_url": "https://example.com/sample-notice-4.pdf",
+      "apply_url": "https://example.com/apply",
+      "source": "Sample", "trust": "OFFICIAL",
+      "first_seen_days_ago": 3, "initial": false, "updates": [], "archived": false
+    },
+    {
+      "id": "sample0005", "sample": true, "kind": "recruitment",
+      "title": "SAMPLE: Office Clerk, Agartala (private company)",
+      "organization": "Sample Pvt Ltd", "sector": "Non-Govt",
+      "post": "Office Clerk",
+      "levels": ["12th"], "min_qualification": "12th", "stream_req": "not_found",
+      "location": "Agartala",
+      "last_date_in_days": 9,
+      "page_url": "https://example.com/sample-listing",
+      "apply_url": "https://example.com/sample-listing",
+      "source": "Sample Aggregator", "trust": "AGGREGATOR",
+      "first_seen_days_ago": 0, "initial": false, "updates": [], "archived": false
+    },
+    {
+      "id": "sample0006", "sample": true, "kind": "recruitment",
+      "title": "SAMPLE: Personal Assistant Gr-II (12th + stenography)",
+      "organization": "Sample Public Service Commission", "sector": "Govt",
+      "post": "Personal Assistant Gr-II", "advt_no": "5/2026", "vacancies": 100,
+      "qualification": "Higher Secondary with stenography and computer skills",
+      "levels": ["12th"], "min_qualification": "12th", "stream_req": "not_specified",
+      "age_limit": "18–40 years", "age_min": 18, "age_max": 40,
+      "pay": "Pay Level 5", "location": "Tripura",
+      "last_date_in_days": -2,
+      "notification_url": "https://example.com/sample-notice-6.pdf",
+      "apply_url": "https://example.com/apply",
+      "source": "Sample", "trust": "OFFICIAL",
+      "first_seen_days_ago": 30, "initial": false,
+      "updates": [
+        {"kind": "admit_card", "title": "SAMPLE: Admit card for written exam", "url": "https://example.com/sample-admit.pdf", "seen_days_ago": 0}
+      ],
+      "updated_days_ago": 0, "archived": false
+    }
+  ]
+}

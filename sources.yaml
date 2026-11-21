@@ -1,0 +1,61 @@
+# sources.yaml - one entry per page or feed. Edit freely.
+#   enabled:   true / false
+#   type:      html (any page with links) | rss (a feed)
+#   frequency: fast (every 30 min) | normal (every 3 hours)
+#   trust:     OFFICIAL | AGGREGATOR
+#   sector:    Govt | Central | PSU | Bank | Teaching | Police | Non-Govt | Other
+#   category:  Government | Central/PSU | Non-Government
+# Never add a URL you have not opened yourself in Chrome.
+
+sources:
+  - name: "TPSC - Advertisements"
+    org: "Tripura Public Service Commission"
+    url: "https://tpsc.tripura.gov.in/advertisement"
+    type: html
+    category: Government
+    sector: Govt
+    trust: OFFICIAL
+    frequency: fast
+    enabled: true
+
+  - name: "TPSC - Results and notices"
+    org: "Tripura Public Service Commission"
+    url: "https://tpsc.tripura.gov.in/results"
+    type: html
+    category: Government
+    sector: Govt
+    trust: OFFICIAL
+    frequency: fast
+    enabled: true
+
+  - name: "TRB Tripura"
+    org: "Teachers Recruitment Board, Tripura"
+    url: "https://trb.tripura.gov.in/"
+    type: html
+    category: Government
+    sector: Teaching
+    trust: OFFICIAL
+    frequency: fast
+    enabled: true
+
+  - name: "Tripura Police - Recruitment"
+    org: "Tripura Police"
+    url: "https://police.tripura.gov.in/recruitment"
+    type: html
+    category: Government
+    sector: Police
+    trust: OFFICIAL
+    frequency: normal
+    enabled: true
+
+  # Disabled until Step 5: the notices page of this site probably needs a
+  # different method. Home page only, so I do not invent a deeper URL.
+  - name: "SSC (CHSL, Steno and others)"
+    org: "Staff Selection Commission"
+    url: "https://ssc.gov.in/"
+    type: html
+    category: Central/PSU
+    sector: Central
+    trust: OFFICIAL
+    frequency: normal
+    enabled: false

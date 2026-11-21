@@ -1,0 +1,56 @@
+# config.yaml - settings. THIS FILE IS PUBLIC: no personal details, no secrets.
+
+app_url: "https://real-debabrata.github.io/cem/"
+timezone: "Asia/Kolkata"
+
+http:
+  user_agent: "TripuraJobAlertBot/1.0 (personal job alerts; +https://github.com/real-debabrata/cem)"
+  robots_agent: "TripuraJobAlertBot"
+  connect_timeout: 15
+  read_timeout: 45
+  retries: 2
+  delay_seconds: 4        # pause between requests to the same website
+
+pdf:
+  max_per_run: 12         # notices read per run (the rest are read on later runs)
+  max_mb: 8
+  max_pages: 6
+  max_tries: 3
+
+history:
+  keep_days: 365
+  expired_grace_days: 3        # keep expired jobs visible for 3 days
+  no_date_archive_days: 45     # job with no last date is archived after 45 days
+  update_archive_days: 30      # standalone admit card/result entries
+  updated_flag_days: 7         # app shows UPDATED for 7 days
+
+keepalive_days: 30
+
+# Used from Step 4 (notifications). Public file: keep these generic.
+alerts:
+  on_new_job: true
+  closing_soon_days: 3
+  on_updates: true             # corrigendum, extension, admit card, result
+  quiet_hours: {start: "22:00", end: "07:00"}
+  urgent_override_days: 1      # last date today/tomorrow may override quiet hours
+  # Alert if the notice's lowest qualification level is one of these...
+  qualification_levels: ["8th", "10th", "12th"]
+  include_unknown_level: true
+  # ...or if the title contains any of these words:
+  keywords:
+    - "12th pass"
+    - "10+2"
+    - "higher secondary"
+    - "CHSL"
+    - "clerk"
+    - "LDC"
+    - "data entry"
+    - "stenographer"
+    - "assistant"
+    - "constable"
+    - "police"
+    - "postal"
+    # Uncomment to also get graduate-level alerts:
+    # - "graduate"
+    # - "teacher"
+    # - "nurse"

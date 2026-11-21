@@ -1,0 +1,76 @@
+name: Scrape jobs
+
+on:
+  schedule:
+    - cron: "7,37 * * * *"     # every 30 minutes: TPSC and TRB only
+    - cron: "22 */3 * * *"     # every 3 hours: all sources
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "dry-run = show results only, selftest = offline check, real = save data"
+        type: choice
+        options: [dry-run, selftest, real]
+        default: dry-run
+      group:
+        description: "all = every source, fast = TPSC and TRB only"
+        type: choice
+        options: [all, fast]
+        default: all
+
+permissions:
+  contents: write
+  actions: write
+  pages: write
+
+concurrency:
+  group: scrape-jobs
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      MODE: ${{ github.event_name == 'schedule' && 'real' || inputs.mode }}
+      GROUP: ${{ github.event_name == 'schedule' && (github.event.schedule == '7,37 * * * *' && 'fast' || 'all') || inputs.group }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install requirements
+        run: pip install -r requirements.txt
+
+      - name: Run scraper
+        run: python scraper/scrape.py --mode "$MODE" --group "$GROUP"
+
+      - name: Save data
+        id: save
+        if: env.MODE == 'real'
+        run: |
+          git config user.name "job-alert-bot"
+          git config user.email "job-alert-bot@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "data: update $(date -u +'%Y-%m-%d %H:%M') UTC"
+            git pull --rebase origin main
+            git push origin HEAD:main
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Ask GitHub Pages to rebuild
+        if: steps.save.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages rebuild request skipped"
+
+      - name: Keep schedule alive
+        if: env.MODE == 'real' && env.GROUP == 'all'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow enable scrape.yml --repo "${{ github.repository }}" || echo "keep-alive call skipped"
