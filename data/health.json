@@ -1,4 +1,29 @@
 {
-  "updated": null,
-  "sources": {}
+ "updated": "2026-11-22T01:43:51+05:30",
+ "sources": {
+  "TPSC - Advertisements": {
+   "url": "https://tpsc.tripura.gov.in/advertisement",
+   "last_run": "2026-11-22T01:43:51+05:30",
+   "status": "error",
+   "error": "robots.txt could not be read; skipped to stay polite",
+   "seconds": 54.6,
+   "consecutive_failures": 1
+  },
+  "TPSC - Results and notices": {
+   "url": "https://tpsc.tripura.gov.in/results",
+   "last_run": "2026-11-22T01:43:51+05:30",
+   "status": "error",
+   "error": "robots.txt could not be read; skipped to stay polite",
+   "seconds": 0.0,
+   "consecutive_failures": 1
+  },
+  "TRB Tripura": {
+   "url": "https://trb.tripura.gov.in/",
+   "last_run": "2026-11-22T01:43:51+05:30",
+   "status": "error",
+   "error": "robots.txt could not be read; skipped to stay polite",
+   "seconds": 54.8,
+   "consecutive_failures": 1
+  }
+ }
 }
