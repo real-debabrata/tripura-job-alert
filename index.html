@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tripura Job Alert</title>
+<style>
+  :root { --bg:#ffffff; --fg:#111827; --accent:#0b6b3a; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0f172a; --fg:#f1f5f9; --accent:#4ade80; }
+  }
+  body { margin:0; padding:24px; font:18px/1.6 system-ui,sans-serif; background:var(--bg); color:var(--fg); }
+  h1 { color:var(--accent); font-size:1.5rem; }
+  .box { border:1px solid var(--accent); border-radius:12px; padding:12px 16px; margin-top:16px; }
+</style>
+</head>
+<body>
+  <h1>Tripura Job Alert</h1>
+  <p>Step 1 OK: your GitHub Pages site is live.</p>
+  <div class="box" id="check">Checking data file…</div>
+  <p>The real app arrives in Step 3.</p>
+<script>
+  fetch("data/jobs.json", { cache: "no-store" })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      document.getElementById("check").textContent =
+        "Data file reachable: yes (" + d.jobs.length + " jobs)";
+    })
+    .catch(function () {
+      document.getElementById("check").textContent =
+        "Data file NOT reachable. Check that data/jobs.json exists.";
+    });
+</script>
+</body>
+</html>
