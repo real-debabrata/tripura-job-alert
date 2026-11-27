@@ -1,29 +1,29 @@
 {
- "updated": "2026-11-27T18:17:14+05:30",
+ "updated": "2026-11-27T20:23:37+05:30",
  "sources": {
   "TPSC - Advertisements": {
    "url": "https://tpsc.tripura.gov.in/advertisement",
-   "last_run": "2026-11-27T18:17:14+05:30",
+   "last_run": "2026-11-27T20:23:37+05:30",
    "status": "error",
    "error": "robots.txt could not be read; skipped to stay polite",
-   "seconds": 55.4,
-   "consecutive_failures": 31
+   "seconds": 55.2,
+   "consecutive_failures": 32
   },
   "TPSC - Results and notices": {
    "url": "https://tpsc.tripura.gov.in/results",
-   "last_run": "2026-11-27T18:17:14+05:30",
+   "last_run": "2026-11-27T20:23:37+05:30",
    "status": "error",
    "error": "robots.txt could not be read; skipped to stay polite",
    "seconds": 0.0,
-   "consecutive_failures": 31
+   "consecutive_failures": 32
   },
   "TRB Tripura": {
    "url": "https://trb.tripura.gov.in/",
-   "last_run": "2026-11-27T18:17:14+05:30",
+   "last_run": "2026-11-27T20:23:37+05:30",
    "status": "error",
    "error": "robots.txt could not be read; skipped to stay polite",
-   "seconds": 54.9,
-   "consecutive_failures": 31
+   "seconds": 55.1,
+   "consecutive_failures": 32
   },
   "Tripura Police - Recruitment": {
    "url": "https://police.tripura.gov.in/recruitment",
